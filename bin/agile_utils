@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# Add the code for binary if we need one
+require_relative '../lib/agile_utils'
+puts "Welcome to #{AgileUtils::PROJECT_NAME} version #{AgileUtils::VERSION}"
+
+include AgileUtils
+
+# TODO: add more code here
+AgileUtils::CLI.start(ARGV)
