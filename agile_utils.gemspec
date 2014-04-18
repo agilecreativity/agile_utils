@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["agilecreativity@gmail.com"]
   spec.summary       = %q{Collection of my library that can be re-used across project}
   spec.description   = %q{My collection of library that I have used that can be shared across multiple project.}
-  spec.homepage      = "https://githut.com/agilecreativity/agile_utils"
+  spec.homepage      = "https://github.com/agilecreativity/agile_utils"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
