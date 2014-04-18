@@ -32,26 +32,38 @@ module AgileUtils
       #
       # @param [Array<String>] files list of input files
       # @param [String] output the output file in .tar.gz format
+      # @todo rename to tar_gzip(..)
       def tar_gzip_files(files, output = 'output.tar.gz')
-        begin
-          sgz = Zlib::GzipWriter.new(File.open(output, 'wb'))
-          tar = Minitar::Output.new(sgz)
-          files.each do |file|
-            Minitar.pack_file(file, tar)
-          end
-        ensure
-          # Closes both tar and sgz.
-          tar.close unless tar.nil?
-          tar = nil
+        sgz = Zlib::GzipWriter.new(File.open(output, 'wb'))
+        tar = Archive::Tar::Minitar::Output.new(sgz)
+        files.each do |file|
+          Archive::Tar::Minitar.pack_file(file, tar)
         end
+      ensure
+        # Closes both tar and sgz.
+        tar.close unless tar.nil?
+        tar = nil
+      end
+
+      # Uncompress 'input.tar.gz' file
+      #
+      # @param [String] filename input file in the 'tar.gzip' format
+      # @param [String] output_dir the output directory
+      def gunzip(filename, output_dir)
+        input_file = File.open(filename, 'rb')
+        tgz = Zlib::GzipReader.new(input_file)
+        # Warning: tgz will be closed!
+        Archive::Tar::Minitar.unpack(tgz, output_dir)
+      # ensure
+        # input_file = nil unless input_file.nil?
       end
 
       # Delete the files from the given list
+      #
+      # @param files list of files to be deleted
+      # @todo add ! to flag it as destructive!
       def delete(files)
-        # Note: should we remove the files and be done with it?
         files.each do |file|
-          #puts "FYI: about to delete file #{file}"
-          # Note: name clash!!!
           FileUtils.rm_rf(file)
         end
       end
@@ -62,8 +74,8 @@ module AgileUtils
       # @param [String] suffix the suffix string
       #
       # @return [Array<String>] new list with the suffix added to each element
-      def add_suffix(extensions = %w(rb pdf), suffix)
-        extensions.map {|e| "#{e}.#{suffix}" }
+      def add_suffix(extensions = [], suffix)
+        extensions.map { |e| "#{e}.#{suffix}" }
       end
 
       # Time the operation before and after the operation for tuning purpose
@@ -75,14 +87,4 @@ module AgileUtils
       end
     end
   end
-end
-
-if __FILE__ == $0
-  include AgileUtils
-  files = AgileUtils::FileUtil.find('test/fixtures/inputs', 'rb')
-  puts files
-  AgileUtils::FileUtil.tar_gzip_files files, 'test/fixtures/output.tar.gz'
-  puts "Your output is at #{File.absolute_path('test/fixtures/output.tar.gz')}"
-  puts "About to delete your file.."
-  #AgileUtils::FileUtil.delete ['test/fixtures/output.tar.gz']
 end

@@ -2,10 +2,9 @@
 
 [![Gem Version](https://badge.fury.io/rb/agile_utils.svg)](http://badge.fury.io/rb/agile_utils)
 
-My collection of ruby library that I have implemented and plan to use them in more
-than one project. To promote the code re-use I move them all to this gem
-DRY (Don't repeat yourself). I hope you will find some of them useful for you
-interesting project.
+My collection of ruby library that I have used in more than one project.
+To promote the code re-use I move them all to this gem.
+I hope you will find some of them useful for your interesting project.
 
 ### Installation
 
@@ -23,38 +22,34 @@ Or install it yourself as:
 
 ### Usage
 
-#### Use as CLI
-
-As this gem is intended to be used as a library in other application.
-I plan to show the available command/api when the command is executed.
-
-```sh
-# to show list of all available api
-agile_utils
-```
-
-#### Use as standard ruby library
-
-This is how the gem supposed to be used.
-
 ```rb
 # Require and include the library in your code
 require 'agile_utils'
 include AgileUtils
 
-# call appropriate methods you like to use
+# Then call the right method to use.
+AgileUtils::Helper.capture
+AgileUtils::Helper.is_linux?
+AgileUtils::Helper.is_osx?
+AgileUtils::Helper.make_list
+AgileUtils::Helper.shell
+AgileUtils::Helper.time
+AgileUtils::Helper.uname
+
 AgileUtils::FileUtil.find()
-AgileUtils::FileUtils.tar_gzip_files()
 AgileUtils::FileUtils.delete()
+AgileUtils::FileUtils.gunzip()
+AgileUtils::FileUtils.tar_gzip_files()
 ```
-
-### Limitation/Known Issues
-
- - Will be listed here if any
 
 ### Changelogs
 
-#### 0.0.1
+#### 0.0.3 - 0.0.4
+
+- Add more functions
+- Code refactoring and cleanup
+
+#### 0.0.2
 
 - First initial release
 
