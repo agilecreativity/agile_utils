@@ -15,11 +15,7 @@ task :pry do
   require 'pry'
   require 'awesome_print'
   require_relative 'lib/agile_utils'
-
-  # TODO: some function that convert "#{project_name}" == AgileUtils
-  # - look in active_support
   include AgileUtils
-
   ARGV.clear
   Pry.start
 end

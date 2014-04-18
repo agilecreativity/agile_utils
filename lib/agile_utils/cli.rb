@@ -1,15 +1,12 @@
 require 'thor'
 require_relative '../agile_utils'
 module AgileUtils
-
   class CLI < Thor
     desc 'main', 'Main entry point'
-
-    # TODO: adjust if required
-    method_option :commit,
-                  aliases: "-c",
-                  desc: "commit your changes",
-                  default: false
+    # method_option :commit,
+    #               aliases: "-c",
+    #               desc: "commit your changes",
+    #               default: false
     def main
       opts = options.symbolize_keys
 
@@ -24,10 +21,10 @@ module AgileUtils
 
     desc "usage", "Display help screen"
     def usage
-      #TODO: add your usage here (How to automate this task from Vim?)
+      # Add your usage here (How to automate this task from Vim?)
       # try running :r !./bin/agile_utils help run
       puts <<-EOS
-      TODO: Add your usage here.
+      Add your usage here.
       EOS
     end
 
@@ -37,7 +34,7 @@ module AgileUtils
 
     # @param [Hash<Symbol, Object>] options the options argument
     def execute(options = {})
-      #TODO: add your logic here
+      # TODO: just a place holder for now!
       puts "FYI: execute with options: #{options}"
     end
 
