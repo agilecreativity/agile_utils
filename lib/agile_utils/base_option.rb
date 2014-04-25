@@ -23,7 +23,7 @@ module AgileUtils
       :non_exts,
       { type: :array,
         aliases: '-f',
-        desc: 'List of extensions to search for',
+        desc: 'List of files without extensions to search for',
         default: [] }
     ]
 

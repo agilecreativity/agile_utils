@@ -44,14 +44,20 @@ AgileUtils::FileUtils.tar_gzip_files()
 
 ### Changelogs
 
+#### 0.0.6
+
+- Fix the `-f` options description
+
 #### 0.0.5
 
 - Correct the short option for '--exc-words'
+
 - Show list of apis for default usage
 
 #### 0.0.3 - 0.0.4
 
 - Add more functions
+
 - Code refactoring and cleanup
 
 #### 0.0.2
