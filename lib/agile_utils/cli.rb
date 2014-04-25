@@ -15,7 +15,23 @@ module AgileUtils
     desc "usage", "Display help screen"
     def usage
       puts <<-EOS
-      Add your usage here.
+# List of available APIs
+require 'agile_utils'
+include AgileUtils
+
+# Make a call to any of the following
+AgileUtils::Helper.capture
+AgileUtils::Helper.is_linux?
+AgileUtils::Helper.is_osx?
+AgileUtils::Helper.make_list
+AgileUtils::Helper.shell
+AgileUtils::Helper.time
+AgileUtils::Helper.uname
+
+AgileUtils::FileUtil.find()
+AgileUtils::FileUtils.delete()
+AgileUtils::FileUtils.gunzip()
+AgileUtils::FileUtils.tar_gzip_files()
       EOS
     end
 

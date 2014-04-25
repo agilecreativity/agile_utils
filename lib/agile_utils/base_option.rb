@@ -38,8 +38,8 @@ module AgileUtils
     EXC_WORDS = [
       :exc_words,
       { type: :array,
-        aliases: '-n',
-        desc: 'List of words to be included in the result',
+        aliases: '-x',
+        desc: 'List of words to be excluded from the result',
         default: [] }
     ]
 
