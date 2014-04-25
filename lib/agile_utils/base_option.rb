@@ -2,7 +2,7 @@
 module AgileUtils
   # Store the options that will be shared by many CLI classes
   module Options
-    # Common options {{{
+
     BASE_DIR = [
       :base_dir,
       { type: :string,
@@ -23,7 +23,7 @@ module AgileUtils
       :non_exts,
       { type: :array,
         aliases: '-f',
-        desc: 'List of files without extensions to search for',
+        desc: 'List of files without extension to search for',
         default: [] }
     ]
 
@@ -31,7 +31,7 @@ module AgileUtils
       :inc_words,
       { type: :array,
         aliases: '-n',
-        desc: 'List of words to be included in the result',
+        desc: 'List of words to be included in the result if any',
         default: [] }
     ]
 
@@ -39,7 +39,7 @@ module AgileUtils
       :exc_words,
       { type: :array,
         aliases: '-x',
-        desc: 'List of words to be excluded from the result',
+        desc: 'List of words to be excluded from the result if any',
         default: [] }
     ]
 
@@ -66,9 +66,8 @@ module AgileUtils
         desc: 'Display version information',
         default: false }
     ]
-    # }}}
 
-    # Options related to 'VimPrinter' only {{{
+    # TODO: move this to `vim_printer` CLI
     THEME = [
       :theme,
       { type: :string,
@@ -76,24 +75,5 @@ module AgileUtils
         desc: 'Vim colorscheme to use',
         default: 'default' }
     ]
-    # }}}
-
-    # The default options text from the above options
-    def default_usage
-      <<-EOT
-Options:
-  -b, [--base-dir=BASE_DIR]                # Base directory
-                                           # Default: . (current directory)
-  -e, [--exts=one two three]               # List of extensions to search for
-  -f, [--non-exts=one two three]           # List of extensions to search for
-  -n, [--inc-words=one two three]          # List of words to be included in the result
-  -x, [--exc-words=one two three]          # List of words to be excluded from the result
-  -i, [--ignore-case], [--no-ignore-case]  # Match case insensitively
-                                           # Default: true
-  -r, [--recursive], [--no-recursive]      # Search for files recursively
-                                           # Default: true
-  -v, [--version], [--no-version]          # Display version information
-      EOT
-    end
   end
 end

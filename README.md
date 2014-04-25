@@ -44,6 +44,12 @@ AgileUtils::FileUtils.tar_gzip_files()
 
 ### Changelogs
 
+#### 0.0.7
+
+- Remove the `default_options` from `base_option.rb`
+
+- Update the description for `base_option.rb`
+
 #### 0.0.6
 
 - Fix the `-f` options description
