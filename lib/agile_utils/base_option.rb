@@ -67,13 +67,5 @@ module AgileUtils
         default: false }
     ]
 
-    # TODO: move this to `vim_printer` CLI
-    THEME = [
-      :theme,
-      { type: :string,
-        aliases: '-t',
-        desc: 'Vim colorscheme to use',
-        default: 'default' }
-    ]
   end
 end

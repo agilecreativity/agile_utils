@@ -44,6 +44,10 @@ AgileUtils::FileUtils.tar_gzip_files()
 
 ### Changelogs
 
+#### 0.0.8
+
+- Move '--theme' option out as it is not a shared option
+
 #### 0.0.7
 
 - Remove the `default_options` from `base_option.rb`
