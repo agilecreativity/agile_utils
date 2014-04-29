@@ -9,7 +9,6 @@ module AgileUtils
   include Archive::Tar::Minitar
 
   module FileUtil
-
     class << self
       # @todo use me when you have to!
       CustomError = Class.new(StandardError)

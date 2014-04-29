@@ -1,10 +1,8 @@
 require 'open3'
 require 'stringio'
-
 module AgileUtils
   module Helper
     class << self
-
       # Wrapper function to call the 'popen3' and return the result
       #
       # @param [Array<String>] commands list of command
@@ -41,7 +39,7 @@ module AgileUtils
       def string_to_hash(input)
         hash = {}
         input.split('\n').each do |i|
-          #TODO: code smell?
+          # TODO: code smell?
           item = i.split(':') if is_linux?
           item = i.split('=') if is_osx?
           next if item.empty? || item.size != 2
@@ -89,8 +87,8 @@ module AgileUtils
       # @return [Array<String>] the list of options for use with Thor
       def make_list(options)
         list = []
-        to_switches(options).split(" ").each do |a|
-          list << a.gsub('"', "")
+        to_switches(options).split(' ').each do |a|
+          list << a.gsub('"', '')
         end
         list
       end
@@ -112,7 +110,7 @@ module AgileUtils
             return exe if File.executable? exe
           end
         end
-        return nil
+        nil
       end
 
       private
@@ -130,11 +128,11 @@ module AgileUtils
           when Hash
             "--#{key} #{value.map { |k, v| "#{k}:#{v}" }.join(' ')}" unless value.empty?
           when nil, false
-            ""
+            ''
           else
             "--#{key} #{value.inspect}"
           end
-        end.join(" ")
+        end.join(' ')
       end
     end
   end

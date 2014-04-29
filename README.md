@@ -1,9 +1,16 @@
 ## agile_utils
 
-[![Gem Version](https://badge.fury.io/rb/agile_utils.svg)](http://badge.fury.io/rb/agile_utils)
+[![Gem Version](https://badge.fury.io/rb/agile_utils.svg)][gem]
+[![Dependency Status](https://gemnasium.com/agilecreativity/agile_utils.png)][gemnasium]
+[![Code Climate](https://codeclimate.com/github/agilecreativity/agile_utils.png)][codeclimate]
 
-My collection of ruby library that I have used in more than one project.
-To promote the code re-use I move them all to this gem.
+[gem]: http://badge.fury.io/rb/agile_utils
+[gemnasium]: https://gemnasium.com/agilecreativity/agile_utils
+[codeclimate]: https://codeclimate.com/github/agilecreativity/agile_utils
+
+My collection of ruby libraries that I have used in more than one projects.
+To promote the code re-use I move them all to this gem. Most of them are from a
+well known gems, but some are written from scratch.
 I hope you will find some of them useful for your interesting project.
 
 ### Installation
@@ -35,44 +42,11 @@ AgileUtils::Helper.make_list
 AgileUtils::Helper.shell
 AgileUtils::Helper.time
 AgileUtils::Helper.uname
-
-AgileUtils::FileUtil.find()
-AgileUtils::FileUtils.delete()
-AgileUtils::FileUtils.gunzip()
-AgileUtils::FileUtils.tar_gzip_files()
+AgileUtils::FileUtil.find
+AgileUtils::FileUtils.delete
+AgileUtils::FileUtils.gunzip
+AgileUtils::FileUtils.tar_gzip_files
 ```
-
-### Changelogs
-
-#### 0.0.8
-
-- Move '--theme' option out as it is not a shared option
-
-#### 0.0.7
-
-- Remove the `default_options` from `base_option.rb`
-
-- Update the description for `base_option.rb`
-
-#### 0.0.6
-
-- Fix the `-f` options description
-
-#### 0.0.5
-
-- Correct the short option for '--exc-words'
-
-- Show list of apis for default usage
-
-#### 0.0.3 - 0.0.4
-
-- Add more functions
-
-- Code refactoring and cleanup
-
-#### 0.0.2
-
-- First initial release
 
 ### Contributing
 

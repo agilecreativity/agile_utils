@@ -1,8 +1,6 @@
-# General library that can be re-use by multiple projects.
 module AgileUtils
   # Store the options that will be shared by many CLI classes
   module Options
-
     BASE_DIR = [
       :base_dir,
       { type: :string,
@@ -66,6 +64,5 @@ module AgileUtils
         desc: 'Display version information',
         default: false }
     ]
-
   end
 end

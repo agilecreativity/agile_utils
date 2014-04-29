@@ -12,7 +12,7 @@ module AgileUtils
       execute(opts)
     end
 
-    desc "usage", "Display help screen"
+    desc 'usage', 'Display help screen'
     def usage
       puts <<-EOS
 # List of available APIs
@@ -43,6 +43,5 @@ AgileUtils::FileUtils.tar_gzip_files()
     def execute(options = {})
       puts "FYI: execute with options: #{options}"
     end
-
   end
 end

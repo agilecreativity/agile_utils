@@ -17,5 +17,5 @@ test/version_tmp
 tmp
 
 # Custom ignore files
-TODOs.md
-output.tar.gz
+.ruby-version
+
