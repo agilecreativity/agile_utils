@@ -19,13 +19,4 @@ describe AgileUtils do
       assert File.exists?("test/fixtures/output.tar.gz"), "Output file must be generated"
     end
   end
-
-  # context '#delete' do
-  #   it 'removes the files' do
-  #     @files.wont_be_empty
-  #     AgileUtils::FileUtil.delete(@files)
-  #
-  #   end
-  # end
-
 end

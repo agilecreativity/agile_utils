@@ -1,6 +1,8 @@
 ## agile_utils
 
 [![Gem Version](https://badge.fury.io/rb/agile_utils.svg)](http://badge.fury.io/rb/agile_utils)
+[![Dependency Status](https://gemnasium.com/agilecreativity/agile_utils.png)](https://gemnasium.com/agilecreativity/agile_utils)
+[![Code Climate](https://codeclimate.com/github/agilecreativity/agile_utils.png)](https://codeclimate.com/github/agilecreativity/agile_utils)
 
 My collection of ruby library that I have used in more than one project.
 To promote the code re-use I move them all to this gem.
