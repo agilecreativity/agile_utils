@@ -46,6 +46,10 @@ AgileUtils::FileUtils.tar_gzip_files()
 
 ### Changelogs
 
+#### 0.0.9
+
+- Update minitest to latest version
+
 #### 0.0.8
 
 - Move '--theme' option out as it is not a shared option

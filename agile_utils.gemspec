@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'awesome_print', '~> 1.2'
   spec.add_development_dependency 'minitest-spec-context', '~> 0.0.3'
   spec.add_development_dependency 'guard-minitest', '~> 2.2'
-  spec.add_development_dependency 'minitest', '~> 4.2'
+  spec.add_development_dependency 'minitest', '~> 5.3'
   spec.add_development_dependency 'guard', '~> 2.6'
   spec.add_development_dependency 'pry', '~> 0.9'
   spec.add_development_dependency 'gem-ctags', '~> 1.0'
