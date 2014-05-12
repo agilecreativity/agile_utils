@@ -14,9 +14,9 @@ describe AgileUtils do
     end
 
     it 'compresses list of files' do
-      refute File.exists?('test/fixtures/output.tar.gz'), 'Output file must not exist'
+      refute File.exist?('test/fixtures/output.tar.gz'), 'Output file must not exist'
       AgileUtils::FileUtil.tar_gzip_files(@files, 'test/fixtures/output.tar.gz')
-      assert File.exists?('test/fixtures/output.tar.gz'), 'Output file must be generated'
+      assert File.exist?('test/fixtures/output.tar.gz'), 'Output file must be generated'
     end
   end
 end
