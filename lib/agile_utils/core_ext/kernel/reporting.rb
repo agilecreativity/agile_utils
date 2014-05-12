@@ -1,4 +1,4 @@
-require 'tempfile'
+require "tempfile"
 module Kernel
   # From: 'activesupport-4.1.0/lib/active_support/core_ext/kernel/reporting.rb
   #

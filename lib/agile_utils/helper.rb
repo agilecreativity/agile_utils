@@ -1,5 +1,5 @@
-require 'open3'
-require 'stringio'
+require "open3"
+require "stringio"
 module AgileUtils
   module Helper
     class << self
@@ -9,24 +9,24 @@ module AgileUtils
       # @return [String] result of the command as the string
       def shell(commands = [])
         begin
-          command = commands.join(' ')
+          command = commands.join(" ")
           stdin, _stderr, _status = Open3.capture3(command)
-        rescue Exception => e
+        rescue => e
           raise "Problem processing #{command}, #{e.message}"
         end
         stdin
       end
 
       def is_osx?
-        uname && uname.strip.downcase == 'darwin'
+        uname && uname.strip.downcase == "darwin"
       end
 
       def is_linux?
-        uname && uname.strip.downcase == 'linux'
+        uname && uname.strip.downcase == "linux"
       end
 
       def uname
-        shell(%w(uname))
+        shell(%w[uname])
       end
 
       # Extract "key1: value1\nkey2: value 2" to
@@ -40,8 +40,8 @@ module AgileUtils
         hash = {}
         input.split('\n').each do |i|
           # TODO: code smell?
-          item = i.split(':') if is_linux?
-          item = i.split('=') if is_osx?
+          item = i.split(":") if is_linux?
+          item = i.split("=") if is_osx?
           next if item.empty? || item.size != 2
           hash[item[0].strip] = item[1].strip
         end
@@ -87,8 +87,8 @@ module AgileUtils
       # @return [Array<String>] the list of options for use with Thor
       def make_list(options)
         list = []
-        to_switches(options).split(' ').each do |a|
-          list << a.gsub('"', '')
+        to_switches(options).split(" ").each do |a|
+          list << a.gsub('"', "")
         end
         list
       end
@@ -103,8 +103,8 @@ module AgileUtils
       #   which('/usr/bin/ruby')  #=> nil
       #   which('bad-executable') #=> nil
       def which(command)
-        exts = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : ['']
-        ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
+        exts = ENV["PATHEXT"] ? ENV["PATHEXT"].split(";") : [""]
+        ENV["PATH"].split(File::PATH_SEPARATOR).each do |path|
           exts.each do |ext|
             exe = File.join(path, "#{command}#{ext}")
             return exe if File.executable? exe
@@ -113,7 +113,7 @@ module AgileUtils
         nil
       end
 
-      private
+    private
 
       # https://github.com/erikhuda/thor/blob/master/lib/thor/parser/options.rb
       #
@@ -124,15 +124,15 @@ module AgileUtils
           when true
             "--#{key}"
           when Array
-            "--#{key} #{value.map { |v| v.inspect }.join(' ')}" unless value.empty?
+            "--#{key} #{value.map { |v| v.inspect }.join(" ")}" unless value.empty?
           when Hash
-            "--#{key} #{value.map { |k, v| "#{k}:#{v}" }.join(' ')}" unless value.empty?
+            "--#{key} #{value.map { |k, v| "#{k}:#{v}" }.join(" ")}" unless value.empty?
           when nil, false
-            ''
+            ""
           else
             "--#{key} #{value.inspect}"
           end
-        end.join(' ')
+        end.join(" ")
       end
     end
   end

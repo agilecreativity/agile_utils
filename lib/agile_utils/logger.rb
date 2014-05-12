@@ -1,4 +1,4 @@
-require 'logger'
+require "logger"
 module AgileUtils
   class << self
     attr_writer :logger

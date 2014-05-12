@@ -1,3 +1,3 @@
 module AgileUtils
-  PROJECT_NAME = 'AgileUtils'
+  PROJECT_NAME = "AgileUtils"
 end

@@ -13,6 +13,9 @@ To promote the code re-use I move them all to this gem. Most of them are from a
 well known gems, but some are written from scratch.
 I hope you will find some of them useful for your interesting project.
 
+Start from version `0.1.0`, the newer version will be released based on
+the [Semantic Versioning][].
+
 ### Installation
 
 Add this line to your application's Gemfile:
@@ -55,3 +58,5 @@ AgileUtils::FileUtils.tar_gzip_files
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+[Semantic Versioning]: http://semver.org
