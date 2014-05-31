@@ -5,8 +5,9 @@ module AgileUtils
     class << self
       # Wrapper function to call the 'popen3' and return the result
       #
-      # @param [Array<String>] commands list of command
+      # @param [Array<String>] commands list of command and arguments to be executed
       # @return [String] result of the command as the string
+      # @raise [RuntimeError] an exception to raise when the command result in error
       def shell(commands = [])
         begin
           command = commands.join(" ")
@@ -17,45 +18,17 @@ module AgileUtils
         stdin
       end
 
-      def is_osx?
-        uname && uname.strip.downcase == "darwin"
+      def osx?
+        RbConfig::CONFIG["host_os"] =~ /darwin/
       end
 
-      def is_linux?
-        uname && uname.strip.downcase == "linux"
+      def linux?
+        RbConfig::CONFIG["host_os"] =~ /linux/
       end
 
+      # Wrap the call to `uname` command
       def uname
         shell(%w[uname])
-      end
-
-      # Extract "key1: value1\nkey2: value 2" to
-      # hash of { "key1" => "value1", "key2" => "value 2" }
-      #
-      # @param [String] input the input string from the unix command
-      # @return [Hash<Symbol,String>] result hash extracted from the command
-      # @todo re-implement the code and look for specific list of keys and quit
-      #       as fast as we get the specific list of keys
-      def string_to_hash(input)
-        hash = {}
-        input.split('\n').each do |i|
-          # TODO: code smell?
-          item = i.split(":") if is_linux?
-          item = i.split("=") if is_osx?
-          next if item.empty? || item.size != 2
-          hash[item[0].strip] = item[1].strip
-        end
-        hash
-      end
-
-      # Add suffix to each item in the list
-      #
-      # @param [Array<String>] list the input list
-      # @param [String] suffix the suffix string
-      # @return [Array<String.] list of input where each element is append with
-      #  suffix string
-      def add_suffix(list = [], suffix)
-        list.map { |e| "#{e}.#{suffix}" }
       end
 
       # For tuning the operation
@@ -95,7 +68,7 @@ module AgileUtils
 
       # Cross-platform way of finding an executable in the $PATH.
       #
-      # @param command [String] the command to look up
+      # @param [String] command the command to look up
       # @return [String, NilClass] full path to the executable file or nil if the
       #  executable is not valid or available.
       # Example:

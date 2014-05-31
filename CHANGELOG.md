@@ -1,3 +1,9 @@
+#### 0.1.3
+
+- Improve the code detection for OS type
+- Remove unused method
+- Update style for rubocop
+
 #### 0.1.2
 
 - Style cleanup with rubocop

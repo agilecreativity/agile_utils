@@ -15,6 +15,7 @@ module AgileUtils
       # @param [String] extension the file extension to search for
       #
       # @return [Array<String>] list of matching files or empty list
+      # rubocop:disable CollectionMethods
       def find(base_dir, extension = "xhtml")
         file_paths = []
         Find.find(base_dir) do |path|
@@ -22,6 +23,7 @@ module AgileUtils
         end
         file_paths
       end
+      # rubocop:enable All
 
       # Tar and gzip list of files
       #
@@ -35,7 +37,6 @@ module AgileUtils
           Archive::Tar::Minitar.pack_file(file, tar)
         end
       ensure
-        # Closes both tar and sgz.
         tar.close unless tar.nil?
         tar = nil
       end
@@ -53,21 +54,10 @@ module AgileUtils
       # Delete the files from the given list
       #
       # @param files list of files to be deleted
-      # @todo add ! to flag it as destructive!
       def delete(files)
         files.each do |file|
           FileUtils.rm_rf(file)
         end
-      end
-
-      # Add suffix to each extensions
-      #
-      # @param [Array<String>] extensions list of extension
-      # @param [String] suffix the suffix string
-      #
-      # @return [Array<String>] new list with the suffix added to each element
-      def add_suffix(extensions = [], suffix)
-        extensions.map { |e| "#{e}.#{suffix}" }
       end
 
       # Time the operation before and after the operation for tuning purpose

@@ -39,8 +39,8 @@ include AgileUtils
 
 # Then call the right method to use.
 AgileUtils::Helper.capture
-AgileUtils::Helper.is_linux?
-AgileUtils::Helper.is_osx?
+AgileUtils::Helper.linux?
+AgileUtils::Helper.osx?
 AgileUtils::Helper.make_list
 AgileUtils::Helper.shell
 AgileUtils::Helper.time

@@ -6,7 +6,7 @@ module AgileUtils
     def main
       opts = options.symbolize_keys
       if opts[:version]
-        puts "You are using #{AgileUtils::PROJECT_NAME} version #{AgileUtils::VERSION}"
+        puts "You are using AgileUtils version #{AgileUtils::VERSION}"
         exit
       end
     end
@@ -19,14 +19,12 @@ include AgileUtils
 
 # General methods
 AgileUtils::Helper.capture
-AgileUtils::Helper.is_linux?
-AgileUtils::Helper.is_osx?
 AgileUtils::Helper.make_list
 AgileUtils::Helper.shell
+AgileUtils::Helper.linux?
+AgileUtils::Helper.osx?
 AgileUtils::Helper.time
 AgileUtils::Helper.uname
-
-# File and related methods
 AgileUtils::FileUtil.find()
 AgileUtils::FileUtils.delete()
 AgileUtils::FileUtils.gunzip()
