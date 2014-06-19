@@ -1,3 +1,7 @@
+#### 0.1.4
+
+- Add the new api for getting the command from shell command
+
 #### 0.1.3
 
 - Improve the code detection for OS type
