@@ -1,3 +1,8 @@
+#### 0.1.5
+
+- Organize the core_ext class
+- Add `blank.rb` class
+
 #### 0.1.4
 
 - Add the new api for getting the command from shell command
