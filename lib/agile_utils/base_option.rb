@@ -6,7 +6,7 @@ module AgileUtils
         aliases: "-b",
         desc:    "Base directory",
         default: Dir.pwd
-       }
+      }
     ]
 
     EXTS = [
@@ -31,7 +31,8 @@ module AgileUtils
       { type: :array,
         aliases: "-n",
         desc: "List of words in the filename to be included with the result if any",
-        default: [] }
+        default: []
+      }
     ]
 
     EXC_WORDS = [
@@ -39,7 +40,8 @@ module AgileUtils
       { type: :array,
         aliases: "-x",
         desc: "List of words in the filename to be excluded from the result if any",
-        default: [] }
+        default: []
+      }
     ]
 
     IGNORE_CASE = [
@@ -47,7 +49,8 @@ module AgileUtils
       { type: :boolean,
         aliases: "-i",
         desc: "Ignore the case in the input filename",
-        default: true }
+        default: true
+      }
     ]
 
     RECURSIVE = [
@@ -55,7 +58,8 @@ module AgileUtils
       { type: :boolean,
         aliases: "-r",
         desc: "Search for files recursively",
-        default: true }
+        default: true
+      }
     ]
 
     VERSION = [
@@ -63,7 +67,8 @@ module AgileUtils
       { type: :boolean,
         aliases: "-v",
         desc: "Display version information",
-        default: false }
+        default: false
+      }
     ]
   end
 end

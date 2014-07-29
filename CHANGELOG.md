@@ -1,3 +1,7 @@
+#### 0.2.0
+
+- Remove the monkeypatch and use 'refinement' feature of ruby 2.1.x
+
 #### 0.1.5
 
 - Organize the core_ext class
