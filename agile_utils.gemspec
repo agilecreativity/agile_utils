@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q(My collection of library that I have used that can be shared across multiple projects)
   spec.homepage      = "https://github.com/agilecreativity/agile_utils"
   spec.license       = "MIT"
+  spec.required_ruby_version = ">= 2.1.0"
   spec.files         = Dir.glob("{bin,lib}/**/*") + %w[Gemfile
                                                        Rakefile
                                                        agile_utils.gemspec
