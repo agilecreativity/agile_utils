@@ -1,3 +1,9 @@
+#### 0.2.2
+
+- Support more ruby version start from 1.9.3+
+- Update gem dependencies
+- Add 'active-support-core-ext' gem
+
 #### 0.2.1
 
 - Make ruby 2.1.0 explicit requirement
