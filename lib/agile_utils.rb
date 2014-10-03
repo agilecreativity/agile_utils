@@ -1,12 +1,18 @@
-# Make use of core_extension (don't invent the wheel)
+require "open3"
+require "stringio"
+require "zlib"
+require "stringio"
+require "find"
+require "fileutils"
+require "archive/tar/minitar"
 require 'active_support'
 require 'active_support/core_ext/object/blank'
 require 'active_support/core_ext/hash/keys'
 require 'active_support/core_ext/hash/indifferent_access'
 require 'active_support/core_ext/kernel/reporting'
-
-require_relative "./agile_utils/version"
-require_relative "./agile_utils/cli"
-require_relative "./agile_utils/helper"
-require_relative "./agile_utils/file_util"
-require_relative "./agile_utils/base_option"
+require "agile_utils/version"
+require "agile_utils/cli"
+require "agile_utils/helper"
+require "agile_utils/file_util"
+require "agile_utils/base_option"
+include AgileUtils

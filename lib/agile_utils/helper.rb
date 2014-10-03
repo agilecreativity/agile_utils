@@ -1,5 +1,3 @@
-require "open3"
-require "stringio"
 module AgileUtils
   module Helper
     class << self
@@ -86,7 +84,7 @@ module AgileUtils
         nil
       end
 
-    private
+      private
 
       # https://github.com/erikhuda/thor/blob/master/lib/thor/parser/options.rb
       #

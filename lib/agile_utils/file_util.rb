@@ -1,8 +1,3 @@
-require "zlib"
-require "stringio"
-require "find"
-require "fileutils"
-require "archive/tar/minitar"
 module AgileUtils
   include Archive::Tar
   include Archive::Tar::Minitar
