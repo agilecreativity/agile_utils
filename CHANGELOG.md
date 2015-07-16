@@ -1,3 +1,7 @@
+#### 0.3.0
+
+- Don't use the active-support-core-ext as it is obsoleted.
+
 #### 0.2.3
 
 - Use `require` instead of `require_relative`
