@@ -25,8 +25,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.add_runtime_dependency "thor", "~> 0.19.1"
   spec.add_runtime_dependency "minitar", "~> 0.5.4"
-  spec.add_runtime_dependency "activesupport-core-ext", "~> 4.0.0.2"
-  spec.add_development_dependency "bundler", "~> 1.7.3"
+  spec.add_development_dependency "bundler", "~> 1.10.5"
   spec.add_development_dependency "rake", "~> 10.3.2"
   spec.add_development_dependency "awesome_print", "~> 1.2.0"
   spec.add_development_dependency "minitest-spec-context", "~> 0.0.3"

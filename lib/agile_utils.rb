@@ -5,14 +5,10 @@ require "stringio"
 require "find"
 require "fileutils"
 require "archive/tar/minitar"
-require 'active_support'
-require 'active_support/core_ext/object/blank'
-require 'active_support/core_ext/hash/keys'
-require 'active_support/core_ext/hash/indifferent_access'
-require 'active_support/core_ext/kernel/reporting'
 require "agile_utils/version"
 require "agile_utils/cli"
 require "agile_utils/helper"
 require "agile_utils/file_util"
 require "agile_utils/base_option"
+
 include AgileUtils
