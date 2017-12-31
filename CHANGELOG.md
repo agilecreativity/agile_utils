@@ -1,3 +1,7 @@
+#### 0.3.1
+
+- Update gem's dependencies
+
 #### 0.3.0
 
 - Don't use the active-support-core-ext as it is obsoleted.
