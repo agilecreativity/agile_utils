@@ -1,7 +1,8 @@
 module AgileUtils
-  include Archive::Tar
-  include Archive::Tar::Minitar
   module FileUtil
+    require 'zlib'
+    require 'minitar'
+
     class << self
       CustomError = Class.new(StandardError)
       # Find list of files based on certain extension
@@ -20,20 +21,10 @@ module AgileUtils
       end
       # rubocop:enable All
 
-      # Tar and gzip list of files
-      #
       # @param [Array<String>] files list of input files
       # @param [String] output the output file in .tar.gz format
-      # @todo rename to tar_gzip(..)
-      def tar_gzip_files(files, output = "output.tar.gz")
-        sgz = Zlib::GzipWriter.new(File.open(output, "wb"))
-        tar = Archive::Tar::Minitar::Output.new(sgz)
-        files.each do |file|
-          Archive::Tar::Minitar.pack_file(file, tar)
-        end
-      ensure
-        tar.close unless tar.nil?
-        tar = nil
+      def tar_gzip_files(files, output="output.tgz")
+        Minitar.pack(files, Zlib::GzipWriter.new(File.open(output, 'wb')))
       end
 
       # Uncompress 'input.tar.gz' file
